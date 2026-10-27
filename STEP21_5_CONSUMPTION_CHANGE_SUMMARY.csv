@@ -1,0 +1,17 @@
+﻿scope,change_category,threshold_method,threshold_kW,count,mae_kW,rmse_kW,bias_kW,errors_over_1kW_pct
+ALL_HOLDOUT,upward_event,90th percentile of absolute hourly changes in pre-window history,1.1559853651238896,133,0.9789889771850095,1.2078059693297285,-0.965948216716143,37.59398496240601
+ALL_HOLDOUT,downward_event,90th percentile of absolute hourly changes in pre-window history,1.1559853651238896,90,0.5062504891507689,0.6024285728030192,0.2629319248948355,10.0
+ALL_HOLDOUT,ordinary_change,90th percentile of absolute hourly changes in pre-window history,1.1559853651238896,3342,0.4008341756771954,0.5378461381165884,0.09861801890303627,6.852184320766009
+ALL_HOLDOUT,unclassifiable_missing_previous_hour,90th percentile of absolute hourly changes in pre-window history,1.1559853651238896,0,,,,
+Window 2,upward_event,90th percentile of absolute hourly changes in pre-window history,1.1694499999999997,25,1.0245051324991317,1.1989882643551568,-1.0245051324991317,32.0
+Window 2,downward_event,90th percentile of absolute hourly changes in pre-window history,1.1694499999999997,16,0.3847652706792976,0.4583056887458217,0.2530801425648399,6.25
+Window 2,ordinary_change,90th percentile of absolute hourly changes in pre-window history,1.1694499999999997,1303,0.3819989033075465,0.4847155685171095,0.10090351891294128,3.760552570990023
+Window 2,unclassifiable_missing_previous_hour,90th percentile of absolute hourly changes in pre-window history,1.1694499999999997,0,,,,
+Window 3,upward_event,90th percentile of absolute hourly changes in pre-window history,1.1533599999999997,30,0.6414978117264003,0.8271516848070252,-0.6304570092033959,20.0
+Window 3,downward_event,90th percentile of absolute hourly changes in pre-window history,1.1533599999999997,21,0.4695218793289353,0.5835885611091872,0.2808636145119636,9.523809523809524
+Window 3,ordinary_change,90th percentile of absolute hourly changes in pre-window history,1.1533599999999997,915,0.3454026554872421,0.46626867360479796,0.07358632549819887,4.590163934426229
+Window 3,unclassifiable_missing_previous_hour,90th percentile of absolute hourly changes in pre-window history,1.1533599999999997,0,,,,
+Window 4,upward_event,90th percentile of absolute hourly changes in pre-window history,1.1435866666666674,78,1.0942047602735379,1.3279782724224938,-1.0762150542906004,46.15384615384615
+Window 4,downward_event,90th percentile of absolute hourly changes in pre-window history,1.1435866666666674,53,0.5574781174866567,0.6464711645345611,0.2588010387688023,11.320754716981133
+Window 4,ordinary_change,90th percentile of absolute hourly changes in pre-window history,1.1435866666666674,1124,0.46779342912155475,0.6409116414065583,0.11634577064015368,12.277580071174377
+Window 4,unclassifiable_missing_previous_hour,90th percentile of absolute hourly changes in pre-window history,1.1435866666666674,0,,,,

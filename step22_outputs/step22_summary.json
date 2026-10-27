@@ -1,0 +1,809 @@
+{
+  "experiment": "InsightForge AI Step 22 recent-history experiment",
+  "status": "completed",
+  "interpretation": "retrospective exploratory comparison; not independent confirmation",
+  "reference_script": "step20_strict_holdout.py (read-only dependency)",
+  "source_zip": "electricity_data.zip (read directly; not extracted)",
+  "evaluation_windows": [
+    {
+      "name": "Window 2",
+      "start": "2010-06-11 22:00:00",
+      "end": "2010-08-06 21:00:00"
+    },
+    {
+      "name": "Window 3",
+      "start": "2010-08-06 22:00:00",
+      "end": "2010-10-01 21:00:00"
+    },
+    {
+      "name": "Window 4",
+      "start": "2010-10-01 22:00:00",
+      "end": "2010-11-26 21:00:00"
+    }
+  ],
+  "reference_feature_names": [
+    "lag24",
+    "lag168",
+    "hour_sin",
+    "hour_cos",
+    "weekday_sin",
+    "weekday_cos",
+    "is_weekend",
+    "month"
+  ],
+  "added_candidate_feature_names": [
+    "lag1",
+    "lag2",
+    "lag3",
+    "lag1_minus_lag2",
+    "lag1_minus_lag3",
+    "mean_previous_3h",
+    "mean_previous_6h"
+  ],
+  "model_settings": {
+    "n_estimators": 50,
+    "max_depth": 12,
+    "min_samples_leaf": 10,
+    "max_features": 0.8,
+    "n_jobs": 1,
+    "random_state": 42
+  },
+  "primary_population": "pooled paired evaluation observations from Windows 2-4",
+  "pooled_paired_n": 3565,
+  "pooled_metrics": {
+    "overall": {
+      "reference": {
+        "n": 3565,
+        "mae": 0.42313460191499114,
+        "rmse": 0.5763547034147924,
+        "bias": 0.06415057821689557
+      },
+      "candidate": {
+        "n": 3565,
+        "mae": 0.31576214201715264,
+        "rmse": 0.45796396631146546,
+        "bias": 0.03534938044772455
+      },
+      "mae_improvement_pct": 25.375485581160273,
+      "rmse_worsening_pct": -20.54129798922162,
+      "absolute_bias_difference_kw": -0.02880119776917102,
+      "bias_difference_kw": -0.02880119776917102
+    },
+    "upward_event": {
+      "n_events": 133,
+      "reference": {
+        "n": 133,
+        "mae": 0.9611590811341034,
+        "rmse": 1.1926396723883776,
+        "bias": -0.9515796245948251
+      },
+      "candidate": {
+        "n": 133,
+        "mae": 1.0414429525294113,
+        "rmse": 1.2224132723918695,
+        "bias": -1.0370734994329007
+      },
+      "mae_improvement_pct": -8.352818276510305,
+      "rmse_worsening_pct": 2.4964455478717458,
+      "absolute_bias_difference_kw": 0.08549387483807558,
+      "bias_difference_kw": -0.08549387483807558
+    }
+  },
+  "window_results": [
+    {
+      "window": "Window 2",
+      "start": "2010-06-11 22:00:00",
+      "end": "2010-08-06 21:00:00",
+      "event_threshold_kw": 1.1694499999999997,
+      "historical_consecutive_changes_for_threshold": 30308,
+      "training_reference_eligible": 29794,
+      "training_shared": 29746,
+      "training_excluded_from_shared": 48,
+      "evaluation_reference_eligible": 1344,
+      "evaluation_paired": 1344,
+      "evaluation_excluded_from_paired": 0,
+      "event_n": 25,
+      "metrics": {
+        "overall": {
+          "reference": {
+            "n": 1344,
+            "mae": 0.39396166006605793,
+            "rmse": 0.5067671317787591,
+            "bias": 0.0816113093248481
+          },
+          "candidate": {
+            "n": 1344,
+            "mae": 0.29475047231052176,
+            "rmse": 0.4149670239185681,
+            "bias": 0.052092482522603664
+          },
+          "mae_improvement_pct": 25.18295504666643,
+          "rmse_worsening_pct": -18.114850412253737,
+          "absolute_bias_difference_kw": -0.029518826802244436,
+          "bias_difference_kw": -0.029518826802244436
+        },
+        "upward_event": {
+          "n_events": 25,
+          "reference": {
+            "n": 25,
+            "mae": 1.0213270942155561,
+            "rmse": 1.2042208204716152,
+            "bias": -1.0213270942155561
+          },
+          "candidate": {
+            "n": 25,
+            "mae": 1.1891216860735112,
+            "rmse": 1.2875930164691305,
+            "bias": -1.1891216860735112
+          },
+          "mae_improvement_pct": -16.429074760503827,
+          "rmse_worsening_pct": 6.923331218012311,
+          "absolute_bias_difference_kw": 0.1677945918579551,
+          "bias_difference_kw": -0.1677945918579551
+        }
+      },
+      "reference_feature_importance": [
+        {
+          "feature": "lag168",
+          "importance": 0.39660891242483465
+        },
+        {
+          "feature": "lag24",
+          "importance": 0.2599295717943691
+        },
+        {
+          "feature": "hour_cos",
+          "importance": 0.10371525013031996
+        },
+        {
+          "feature": "month",
+          "importance": 0.08549311877520699
+        },
+        {
+          "feature": "hour_sin",
+          "importance": 0.08385664252654872
+        },
+        {
+          "feature": "weekday_sin",
+          "importance": 0.03913596893377242
+        },
+        {
+          "feature": "weekday_cos",
+          "importance": 0.016720203901034746
+        },
+        {
+          "feature": "is_weekend",
+          "importance": 0.014540331513913507
+        }
+      ],
+      "candidate_feature_importance": [
+        {
+          "feature": "lag1",
+          "importance": 0.6313182448757159
+        },
+        {
+          "feature": "lag168",
+          "importance": 0.0572689615802212
+        },
+        {
+          "feature": "lag1_minus_lag3",
+          "importance": 0.055393033024336256
+        },
+        {
+          "feature": "hour_cos",
+          "importance": 0.04230018576350028
+        },
+        {
+          "feature": "mean_previous_3h",
+          "importance": 0.041216746515136654
+        },
+        {
+          "feature": "lag24",
+          "importance": 0.03881681953122107
+        },
+        {
+          "feature": "hour_sin",
+          "importance": 0.03827476323441919
+        },
+        {
+          "feature": "lag1_minus_lag2",
+          "importance": 0.027780630184615233
+        },
+        {
+          "feature": "mean_previous_6h",
+          "importance": 0.01756122328672263
+        },
+        {
+          "feature": "lag2",
+          "importance": 0.013788814145439044
+        },
+        {
+          "feature": "lag3",
+          "importance": 0.011129733173125739
+        },
+        {
+          "feature": "month",
+          "importance": 0.010064982175428295
+        },
+        {
+          "feature": "weekday_sin",
+          "importance": 0.009304653388254116
+        },
+        {
+          "feature": "weekday_cos",
+          "importance": 0.0035611601910525447
+        },
+        {
+          "feature": "is_weekend",
+          "importance": 0.0022200489308119866
+        }
+      ]
+    },
+    {
+      "window": "Window 3",
+      "start": "2010-08-06 22:00:00",
+      "end": "2010-10-01 21:00:00",
+      "event_threshold_kw": 1.15336,
+      "historical_consecutive_changes_for_threshold": 31652,
+      "training_reference_eligible": 31138,
+      "training_shared": 31090,
+      "training_excluded_from_shared": 48,
+      "evaluation_reference_eligible": 966,
+      "evaluation_paired": 966,
+      "evaluation_excluded_from_paired": 0,
+      "event_n": 30,
+      "metrics": {
+        "overall": {
+          "reference": {
+            "n": 966,
+            "mae": 0.3589353877576012,
+            "rmse": 0.4878155671986043,
+            "bias": 0.056620177355616835
+          },
+          "candidate": {
+            "n": 966,
+            "mae": 0.27548267672996757,
+            "rmse": 0.39533724366436723,
+            "bias": 0.037671105408105796
+          },
+          "mae_improvement_pct": 23.25006501838473,
+          "rmse_worsening_pct": -18.957640910337407,
+          "absolute_bias_difference_kw": -0.01894907194751104,
+          "bias_difference_kw": -0.01894907194751104
+        },
+        "upward_event": {
+          "n_events": 30,
+          "reference": {
+            "n": 30,
+            "mae": 0.65268802235568,
+            "rmse": 0.8457385411027609,
+            "bias": -0.6497828676760222
+          },
+          "candidate": {
+            "n": 30,
+            "mae": 0.7259585728842897,
+            "rmse": 0.842457305451215,
+            "bias": -0.7259585728842897
+          },
+          "mae_improvement_pct": -11.225968306291536,
+          "rmse_worsening_pct": -0.3879728180848314,
+          "absolute_bias_difference_kw": 0.07617570520826744,
+          "bias_difference_kw": -0.07617570520826744
+        }
+      },
+      "reference_feature_importance": [
+        {
+          "feature": "lag168",
+          "importance": 0.3913135624394076
+        },
+        {
+          "feature": "lag24",
+          "importance": 0.2595293046030861
+        },
+        {
+          "feature": "hour_cos",
+          "importance": 0.10848463491724829
+        },
+        {
+          "feature": "month",
+          "importance": 0.09193013835987313
+        },
+        {
+          "feature": "hour_sin",
+          "importance": 0.07972617643949202
+        },
+        {
+          "feature": "weekday_sin",
+          "importance": 0.03804331148742197
+        },
+        {
+          "feature": "weekday_cos",
+          "importance": 0.017136435995814926
+        },
+        {
+          "feature": "is_weekend",
+          "importance": 0.013836435757655854
+        }
+      ],
+      "candidate_feature_importance": [
+        {
+          "feature": "lag1",
+          "importance": 0.6277029428357503
+        },
+        {
+          "feature": "lag168",
+          "importance": 0.0585451930009664
+        },
+        {
+          "feature": "mean_previous_3h",
+          "importance": 0.04829960444946982
+        },
+        {
+          "feature": "lag1_minus_lag3",
+          "importance": 0.04503608269712415
+        },
+        {
+          "feature": "lag24",
+          "importance": 0.043281338924532814
+        },
+        {
+          "feature": "hour_cos",
+          "importance": 0.041077114850836705
+        },
+        {
+          "feature": "hour_sin",
+          "importance": 0.03620415966019377
+        },
+        {
+          "feature": "lag1_minus_lag2",
+          "importance": 0.032245989096137295
+        },
+        {
+          "feature": "mean_previous_6h",
+          "importance": 0.018451862688956717
+        },
+        {
+          "feature": "lag2",
+          "importance": 0.013407887983551714
+        },
+        {
+          "feature": "lag3",
+          "importance": 0.011269628590568844
+        },
+        {
+          "feature": "month",
+          "importance": 0.009970731792257152
+        },
+        {
+          "feature": "weekday_sin",
+          "importance": 0.008885182698509606
+        },
+        {
+          "feature": "weekday_cos",
+          "importance": 0.0036901171272246984
+        },
+        {
+          "feature": "is_weekend",
+          "importance": 0.001932163603920065
+        }
+      ]
+    },
+    {
+      "window": "Window 4",
+      "start": "2010-10-01 22:00:00",
+      "end": "2010-11-26 21:00:00",
+      "event_threshold_kw": 1.1435866666666672,
+      "historical_consecutive_changes_for_threshold": 32785,
+      "training_reference_eligible": 32104,
+      "training_shared": 32056,
+      "training_excluded_from_shared": 48,
+      "evaluation_reference_eligible": 1255,
+      "evaluation_paired": 1255,
+      "evaluation_excluded_from_paired": 0,
+      "event_n": 78,
+      "metrics": {
+        "overall": {
+          "reference": {
+            "n": 1255,
+            "mae": 0.503791872609019,
+            "rmse": 0.6967247165008599,
+            "bias": 0.05124790460965021
+          },
+          "candidate": {
+            "n": 1255,
+            "mae": 0.36926783727861284,
+            "rmse": 0.5394993659819376,
+            "bias": 0.015631838216357385
+          },
+          "mae_improvement_pct": 26.70230359885284,
+          "rmse_worsening_pct": -22.566351787912815,
+          "absolute_bias_difference_kw": -0.035616066393292824,
+          "bias_difference_kw": -0.035616066393292824
+        },
+        "upward_event": {
+          "n_events": 78,
+          "reference": {
+            "n": 78,
+            "mae": 1.060517176471493,
+            "rmse": 1.2982526897172872,
+            "bias": -1.0453003421210534
+          },
+          "candidate": {
+            "n": 78,
+            "mae": 1.1154501711287852,
+            "rmse": 1.320458865398729,
+            "bias": -1.1079996934129397
+          },
+          "mae_improvement_pct": -5.179830735044102,
+          "rmse_worsening_pct": 1.7104663720186473,
+          "absolute_bias_difference_kw": 0.06269935129188631,
+          "bias_difference_kw": -0.06269935129188631
+        }
+      },
+      "reference_feature_importance": [
+        {
+          "feature": "lag168",
+          "importance": 0.392149642509965
+        },
+        {
+          "feature": "lag24",
+          "importance": 0.26303598930687067
+        },
+        {
+          "feature": "hour_cos",
+          "importance": 0.10485730447457661
+        },
+        {
+          "feature": "month",
+          "importance": 0.09247361081114445
+        },
+        {
+          "feature": "hour_sin",
+          "importance": 0.07852303628868769
+        },
+        {
+          "feature": "weekday_sin",
+          "importance": 0.038528441978920386
+        },
+        {
+          "feature": "weekday_cos",
+          "importance": 0.016756884986703868
+        },
+        {
+          "feature": "is_weekend",
+          "importance": 0.013675089643131475
+        }
+      ],
+      "candidate_feature_importance": [
+        {
+          "feature": "lag1",
+          "importance": 0.627754332410212
+        },
+        {
+          "feature": "lag168",
+          "importance": 0.05777486737534317
+        },
+        {
+          "feature": "mean_previous_3h",
+          "importance": 0.0478466000774359
+        },
+        {
+          "feature": "lag1_minus_lag3",
+          "importance": 0.04550749258322916
+        },
+        {
+          "feature": "lag24",
+          "importance": 0.0434220346405841
+        },
+        {
+          "feature": "hour_cos",
+          "importance": 0.040284924267636836
+        },
+        {
+          "feature": "hour_sin",
+          "importance": 0.037742155662895516
+        },
+        {
+          "feature": "lag1_minus_lag2",
+          "importance": 0.031041937054927388
+        },
+        {
+          "feature": "mean_previous_6h",
+          "importance": 0.019537582913544894
+        },
+        {
+          "feature": "lag2",
+          "importance": 0.013056933870894223
+        },
+        {
+          "feature": "lag3",
+          "importance": 0.01098965623421819
+        },
+        {
+          "feature": "month",
+          "importance": 0.010275423435522117
+        },
+        {
+          "feature": "weekday_sin",
+          "importance": 0.008653291831165222
+        },
+        {
+          "feature": "weekday_cos",
+          "importance": 0.003735818985626566
+        },
+        {
+          "feature": "is_weekend",
+          "importance": 0.0023769486567647713
+        }
+      ]
+    }
+  ],
+  "bootstrap": {
+    "12": {
+      "requested_block_length_hours": 12,
+      "replicates_planned": 10000,
+      "valid_event_replicates": 10000,
+      "insufficient_event_replicates": 0,
+      "valid_event_replicate_fraction": 1.0,
+      "event_bootstrap_reliable": true,
+      "contiguous_run_count": 7,
+      "contiguous_run_min_hours": 6,
+      "contiguous_run_max_hours": 1344,
+      "short_run_count_per_replicate": 1,
+      "short_run_observations_per_replicate": 6,
+      "intervals": {
+        "overall_mae_improvement_pct": {
+          "low": 22.68894387666311,
+          "high": 28.079833516400726,
+          "n_finite": 10000
+        },
+        "overall_rmse_worsening_pct": {
+          "low": -23.52208304555001,
+          "high": -17.482462969055323,
+          "n_finite": 10000
+        },
+        "overall_absolute_bias_difference_kw": {
+          "low": -0.049648633431448014,
+          "high": -0.0064338407730312715,
+          "n_finite": 10000
+        },
+        "overall_bias_difference_kw": {
+          "low": -0.049648633431448014,
+          "high": -0.0064338407730312715,
+          "n_finite": 10000
+        },
+        "event_mae_improvement_pct": {
+          "low": -15.001765986881171,
+          "high": -1.9509820251792025,
+          "n_finite": 10000
+        },
+        "event_rmse_worsening_pct": {
+          "low": -3.0165286813550543,
+          "high": 8.486392410389845,
+          "n_finite": 10000
+        },
+        "event_absolute_bias_difference_kw": {
+          "low": 0.024554463847115106,
+          "high": 0.13927179151236682,
+          "n_finite": 10000
+        },
+        "event_bias_difference_kw": {
+          "low": -0.13927179151236682,
+          "high": -0.024554463847115106,
+          "n_finite": 10000
+        }
+      }
+    },
+    "24": {
+      "requested_block_length_hours": 24,
+      "replicates_planned": 10000,
+      "valid_event_replicates": 10000,
+      "insufficient_event_replicates": 0,
+      "valid_event_replicate_fraction": 1.0,
+      "event_bootstrap_reliable": true,
+      "contiguous_run_count": 7,
+      "contiguous_run_min_hours": 6,
+      "contiguous_run_max_hours": 1344,
+      "short_run_count_per_replicate": 2,
+      "short_run_observations_per_replicate": 29,
+      "intervals": {
+        "overall_mae_improvement_pct": {
+          "low": 22.74693876349507,
+          "high": 28.400630247415165,
+          "n_finite": 10000
+        },
+        "overall_rmse_worsening_pct": {
+          "low": -23.81037854234103,
+          "high": -17.537347010584867,
+          "n_finite": 10000
+        },
+        "overall_absolute_bias_difference_kw": {
+          "low": -0.053060577857585806,
+          "high": -0.005383903457166405,
+          "n_finite": 10000
+        },
+        "overall_bias_difference_kw": {
+          "low": -0.053060577857585806,
+          "high": -0.005383903457166405,
+          "n_finite": 10000
+        },
+        "event_mae_improvement_pct": {
+          "low": -14.459638309875201,
+          "high": -1.7721348866421391,
+          "n_finite": 10000
+        },
+        "event_rmse_worsening_pct": {
+          "low": -3.2652458684693384,
+          "high": 8.032380383662494,
+          "n_finite": 10000
+        },
+        "event_absolute_bias_difference_kw": {
+          "low": 0.02399497048057369,
+          "high": 0.1354236915768694,
+          "n_finite": 10000
+        },
+        "event_bias_difference_kw": {
+          "low": -0.13542369157686943,
+          "high": -0.023994970480573762,
+          "n_finite": 10000
+        }
+      }
+    },
+    "48": {
+      "requested_block_length_hours": 48,
+      "replicates_planned": 10000,
+      "valid_event_replicates": 10000,
+      "insufficient_event_replicates": 0,
+      "valid_event_replicate_fraction": 1.0,
+      "event_bootstrap_reliable": true,
+      "contiguous_run_count": 7,
+      "contiguous_run_min_hours": 6,
+      "contiguous_run_max_hours": 1344,
+      "short_run_count_per_replicate": 2,
+      "short_run_observations_per_replicate": 29,
+      "intervals": {
+        "overall_mae_improvement_pct": {
+          "low": 22.472365948079585,
+          "high": 28.52641139507865,
+          "n_finite": 10000
+        },
+        "overall_rmse_worsening_pct": {
+          "low": -23.53269450499565,
+          "high": -17.33157768349155,
+          "n_finite": 10000
+        },
+        "overall_absolute_bias_difference_kw": {
+          "low": -0.055513956632101555,
+          "high": -0.004386629736743619,
+          "n_finite": 10000
+        },
+        "overall_bias_difference_kw": {
+          "low": -0.055513956632101555,
+          "high": -0.004386629736743619,
+          "n_finite": 10000
+        },
+        "event_mae_improvement_pct": {
+          "low": -14.948911128750305,
+          "high": -1.7059462360666628,
+          "n_finite": 10000
+        },
+        "event_rmse_worsening_pct": {
+          "low": -3.1712826074384384,
+          "high": 8.184413512437878,
+          "n_finite": 10000
+        },
+        "event_absolute_bias_difference_kw": {
+          "low": 0.024288853797881864,
+          "high": 0.1394777875277013,
+          "n_finite": 10000
+        },
+        "event_bias_difference_kw": {
+          "low": -0.1394777875277014,
+          "high": -0.024288853797881867,
+          "n_finite": 10000
+        }
+      }
+    }
+  },
+  "primary_bootstrap_block_length_hours": 24,
+  "decisions": [
+    {
+      "criterion": "1_overall_mae_improvement",
+      "label": "Overall MAE improvement (%)",
+      "point_estimate": 25.375485581160273,
+      "threshold": 3,
+      "direction": "min",
+      "ci_95": {
+        "low": 22.74693876349507,
+        "high": 28.400630247415165,
+        "n_finite": 10000
+      },
+      "decision": "PASS",
+      "event_bootstrap_reliable": null
+    },
+    {
+      "criterion": "2_overall_rmse_worsening",
+      "label": "Overall RMSE worsening (%)",
+      "point_estimate": -20.54129798922162,
+      "threshold": 1,
+      "direction": "max",
+      "ci_95": {
+        "low": -23.81037854234103,
+        "high": -17.537347010584867,
+        "n_finite": 10000
+      },
+      "decision": "PASS",
+      "event_bootstrap_reliable": null
+    },
+    {
+      "criterion": "3_overall_absolute_bias_difference",
+      "label": "Overall absolute-bias difference (kW)",
+      "point_estimate": -0.02880119776917102,
+      "threshold": 0.05,
+      "direction": "max",
+      "ci_95": {
+        "low": -0.053060577857585806,
+        "high": -0.005383903457166405,
+        "n_finite": 10000
+      },
+      "decision": "PASS",
+      "event_bootstrap_reliable": null
+    },
+    {
+      "criterion": "4_event_mae_improvement",
+      "label": "Upward-event MAE improvement (%)",
+      "point_estimate": -8.352818276510305,
+      "threshold": 5,
+      "direction": "min",
+      "ci_95": {
+        "low": -14.459638309875201,
+        "high": -1.7721348866421391,
+        "n_finite": 10000
+      },
+      "decision": "FAIL",
+      "event_bootstrap_reliable": true
+    },
+    {
+      "criterion": "5_event_absolute_bias_difference",
+      "label": "Upward-event absolute-bias difference (kW)",
+      "point_estimate": 0.08549387483807558,
+      "threshold": 0.05,
+      "direction": "max",
+      "ci_95": {
+        "low": 0.02399497048057369,
+        "high": 0.1354236915768694,
+        "n_finite": 10000
+      },
+      "decision": "FAIL",
+      "event_bootstrap_reliable": true
+    },
+    {
+      "criterion": "6_event_bias_direction",
+      "label": "Upward-event bias difference (kW)",
+      "point_estimate": -0.08549387483807558,
+      "threshold": -0.05,
+      "direction": "min",
+      "ci_95": {
+        "low": -0.13542369157686943,
+        "high": -0.023994970480573762,
+        "n_finite": 10000
+      },
+      "decision": "FAIL",
+      "event_bootstrap_reliable": true
+    }
+  ],
+  "overall_outcome": "FAIL",
+  "runtime_seconds": 125.962,
+  "bootstrap_seed": 20261022,
+  "bootstrap_replicates_per_block_length": 10000,
+  "event_minimum_observations_per_replicate": 10,
+  "minimum_valid_event_replicates": 9500,
+  "notes": [
+    "Shared training cohort requires both feature sets.",
+    "All added features require exact preceding timestamps; no imputation.",
+    "Same model settings and paired evaluation timestamps per window.",
+    "Blocks do not cross timestamp gaps or evaluation-window boundaries.",
+    "Event labels are fixed during resampling.",
+    "Confidence intervals are conditional on observed evaluation periods; no family-wise guarantee is implied."
+  ]
+}
